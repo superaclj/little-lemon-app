@@ -1,19 +1,18 @@
 package com.example.littlelemonapp.composables
 
+
 import android.content.Context
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
 import com.example.littlelemonapp.navigation.Home
 import com.example.littlelemonapp.navigation.Onboarding
 import com.example.littlelemonapp.navigation.Profile
 
 
 @Composable
-fun NavigationComposable() {
-    val navController = rememberNavController()
+fun NavigationComposable(navController: NavHostController, context: Context) {
     val startDestination = if (isUserDataStored(navController.context)) Home.route else Onboarding.route
 
     NavHost(navController = navController, startDestination = startDestination) {
@@ -21,7 +20,7 @@ fun NavigationComposable() {
             Onboarding(navController = navController)
         }
         composable(Home.route) {
-            Home(navController = navController )
+            Home(navController = navController, context = context)
         }
         composable(Profile.route) {
             Profile(navController = navController)
