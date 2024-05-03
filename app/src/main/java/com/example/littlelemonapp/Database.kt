@@ -1,5 +1,6 @@
 package com.example.littlelemonapp
 
+
 import androidx.lifecycle.LiveData
 import androidx.room.*
 
@@ -9,7 +10,7 @@ data class MenuItemRoom(
     val id: Int,
     val title: String,
     val description: String,
-    val price: Double,
+    val price: String,
     val category: String,
     val image: String
 )

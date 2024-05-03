@@ -19,7 +19,7 @@ data class MenuItemNetwork(
     @SerialName("description")
     val description: String,
     @SerialName("price")
-    val price: Double,
+    val price: String,
     @SerialName("category")
     val category: String,
     @SerialName("image")
